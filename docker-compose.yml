@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:14.4
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: facebook_db
+      POSTGRES_DB: facebook_db
+      POSTGRES_USER: postgres
+    container_name: facebook_db
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
